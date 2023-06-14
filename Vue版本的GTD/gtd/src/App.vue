@@ -182,7 +182,17 @@ let data = [{
                     <el-icon :size="20"><Delete /></el-icon>
                 </el-row>
             </el-aside>
-            <el-main >Main</el-main>
+            <el-main >
+                <el-row class="title">
+                    <span class="title">任务标题</span>
+                    <span class="change">
+                        <el-button type="primary" :icon="Edit" circle />
+                        <el-button type="success" :icon="Check" circle />
+                    </span>
+                </el-row>
+                <el-row class="time">任务内容</el-row>
+                <el-row class="content">任务内容</el-row>
+            </el-main>
           </el-container>
         </el-container>
       </div>
@@ -191,6 +201,38 @@ let data = [{
 <style lang="less">
 .common-layout{
     background-color: #EEF1FF;
+}
+.el-main{
+    border: 1px solid #B1B2FF;
+    padding: 0;
+    
+    display: flex;
+    flex-direction: column;
+
+    .el-row.title{
+        padding-left: 10px;
+        min-height: 60px;
+        line-height: 60px;
+        display: flex;
+        justify-content: space-between;
+        span.change{
+            margin-right: 10px;
+            .el-button.is-circle{
+                padding: 16px;
+            }
+      }
+    }
+    .el-row.time{
+        padding-left: 10px;
+        min-height: 45px;
+        border: 1px solid #B1B2FF;
+        line-height: 45px;
+    }
+    .el-row.content{
+        padding-left: 10px;
+        flex:1;
+    }
+
 }
 .el-aside{
     overflow: unset;
