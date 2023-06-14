@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/3a420bb62e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <nav>GTD Tools</nav>
+    <div class="main">
+        <aside class="all">
+            <div class="task-folder-all">所有任务 (<span class="count">11</span>)</div>
+            <div class="task-folder">
+                <div class="task-folder-title">任务列表</div>
+                <ul class="task-folder-content-list">
+                    <li>
+                        <ul>
+                            <li><span><i class="fa-solid fa-folder" ></i>百度ife项目 (<span class="conunt">10</span>)</span>
+                                </span><span class="del-folder"><i class="fa-solid fa-trash"></i></span></li>
+                            <li class="task"><i class="fa-regular fa-file"></i>task1 (<span class="conunt">6</span>)</li>
+                            <li class="task"><i class="fa-regular fa-file"></i>task2 (<span class="conunt">4</span>)</li>
+                        </ul>
+                    </li>
+
+                    <li><span><i class="fa-solid fa-folder" ></i>毕业设计 (<span class="conunt">1</span>)</span>
+                        </span><span class="del-folder"><i class="fa-solid fa-trash"></i></span></li>
+                    <li><span><i class="fa-solid fa-folder" ></i>社团活动 (<span class="conunt">0</span>)</span>
+                        </span><span class="del-folder"><i class="fa-solid fa-trash"></i></span></li>
+                    <li><span><i class="fa-solid fa-folder" ></i>家庭生活 (<span class="conunt">0</span>)</span>
+                        </span><span class="del-folder"><i class="fa-solid fa-trash"></i></span></li>
+                    <li><span><i class="fa-solid fa-folder" ></i>默认分类 (<span class="conunt">0</span>)</span>
+                        </span><span class="del-folder"><i class="fa-solid fa-trash"></i></span></li>
+                </ul>
+            </div>
+            <div class="add-folder "><i class="fa-solid fa-plus"></i>新增分类</div>
+            <input class="add-task-input close" type="text"></input>
+        </aside>
+        <aside class="two">
+            <div class="title">
+                <span class="all">所有</span>
+                <span class="done">已完成</span>
+                <span class="undone">未完成</span>
+            </div>
+            <ul class="subTask">
+                <li>
+                    <li class="time"><span> 2015-08-08</span></li>
+                    <ol>
+                        <li class="todo">to do 1</li>
+                        <li class="todo">to do 2</li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="add-new"><i class="fa-solid fa-plus"></i>新增任务</div>
+            <input type="text" class="add-input close">
+        </aside>
+        <section class="sub-task">
+            <div class="title"><span class="task-name">to-do 6</span><input class="task-title close " type="text">
+                <span><b class="edit-task"><i class="fa-solid fa-pen-to-square fa-xl"></i></b><b class="done-task"><i class="fa-solid fa-circle-check fa-xl"></i></b></span>
+
+            </div>
+            <div class="time">2017-4-3</div>
+            <input type="text" class="change-time close">
+            <div class="content">任务内容</div>
+            <textarea class="re-con close" cols="30" rows="10"></textarea>
+        </section>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
