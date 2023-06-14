@@ -1,0 +1,275 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* background-color: #eee; */
+}
+
+.main {
+    display: flex;
+}
+
+.main aside {
+    flex: 1
+}
+
+.main section {
+    flex: 4
+}
+
+.close {
+    display: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* 
+.show {
+  display: block;
+} */
+
+li {
+    list-style: none;
+}
+
+
+/* 
+.yellow {
+  background-color: yellow;
+} */
+
+nav {
+    width: 100%;
+    height: 50px;
+    line-height: 30px;
+    font-size: 35px;
+    font-weight: 700;
+    padding-top: 7px;
+    padding-left: 15px;
+    border: 2px solid #ddd;
+    background-color: #ddd;
+    color: #b3b3b3;
+}
+
+.main aside.all {
+    background-color: #f2f2f2;
+    min-width: 200px;
+    padding-left: 15px;
+}
+
+.main aside.all .task-title {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+}
+
+.main aside.all .task-list .task-folder-all {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+}
+
+.task-folder-title {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+}
+
+.task-folder-content-list li {
+    padding-left: 15px;
+    max-width: 200px;
+}
+
+
+/* .task-folder-content-list li span {
+  min-width: 20px;
+} */
+
+.task-folder-content-list .task {
+    padding-left: 30px;
+}
+
+.task-folder-content-list .task:hover {
+    background-color: #fff;
+}
+
+.add-folder {
+    width: 200px;
+    height: 45px;
+    position: fixed;
+    line-height: 45px;
+    padding-left: 15px;
+    left: 0;
+    bottom: 0;
+    border: 1px solid #ccc;
+    background-color: #eee;
+}
+
+.all {
+    height: 400px;
+    border: 1px solid #ccc;
+    background-color: #f2f2f2;
+    width: 200px;
+}
+
+.task-folder ul li {
+    line-height: 30px;
+}
+
+.two {
+    min-width: 200px;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+.two .title {
+    height: 35px;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #ccc;
+    background-color: #d4d0d0;
+}
+
+.two .title span {
+    flex: 1;
+    max-width: 50px;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    margin: 10px 0;
+    font-size: 12px;
+    height: 25px;
+    margin: 5px 0;
+    line-height: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.two .title span:hover {
+    background-color: #fff;
+}
+
+.two ul li.time {
+    background-color: #fafaee;
+}
+
+.two ul li.time span {
+    margin-left: 15px;
+}
+
+.two li.todo {
+    padding-left: 30px;
+    background-color: white;
+    height: 25px;
+    line-height: 25px;
+}
+
+.two ul li.time span {
+    background-color: #fafaee;
+}
+
+.two .add-new {
+    position: fixed;
+    bottom: 0;
+    width: 184px;
+    height: 45px;
+    border: 1px solid #ccc;
+    line-height: 45px;
+    padding-left: 15px;
+    background-color: #eee;
+}
+
+.main section .title {
+    height: 45px;
+    line-height: 45px;
+    background-color: #f2f2f2;
+    padding-left: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main section .time {
+    height: 45px;
+    line-height: 45px;
+    padding-left: 15px;
+    background-color: #fafaee;
+    font-size: 14px;
+}
+
+.main section .time span {
+    background-color: #fafaee;
+}
+
+.main section .content {
+    padding-left: 15px;
+    height: 100%;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+section .title span:first-child {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+section .title span:last-child {
+    font-size: 14px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+section .title span:last-child b {
+    font-weight: 400;
+    margin: 0 15px;
+}
+
+i.fa-folder,
+i.fa-plus,
+i.fa-file {
+    margin-right: 10px;
+}
+
+span.del-folder {
+    display: none;
+    padding-right: 10px;
+}
+
+ul.task-folder-content-list li:hover span.del-folder {
+    display: block;
+}
+
+li.task {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+i.fa-file {
+    line-height: unset;
+}
+
+.current {
+    background-color: #d2cbcb !important;
+}
+
+.close {
+    display: none !important;
+}
+
+li.folder {
+    display: flex;
+    justify-content: space-between;
+}
+
+.current-task-list {
+    background-color: white;
+}
+
+.green {
+    color: rgb(57, 245, 104) !important;
+}
+
+.white {
+    background-color: #fff !important;
+}
