@@ -1,19 +1,21 @@
 <script >
+
+
 export default{
     data(){
         return {
             data:[{
     name:"百度ife项目",
-    active:false,
+    active:true,
     tasks:[
         {
             name:"task 1",
             date:"2019/1/1",
-            active:true,
+            active:false,
             todos:[{
                 name:"to do 1",
                 done:false,
-                active:true,
+                active:false,
                 content:"Content",
             },{
                 name:"to do 2",
@@ -34,12 +36,12 @@ export default{
         },
         {
             name:"task2",
-            active:false,
+            active:true,
             date:"2019/1/10",
             todos:[{
                 name:"to do 5",
                 done:false,
-                active:false,
+                active:true,
                 content:"Content",
             },{
                 name:"to do 6",
@@ -93,6 +95,111 @@ export default{
         }
     },
     methods:{
+        countTodoOfFolder(folder){
+           let  count = 0
+            for(let obj of folder.tasks){
+                for(let o of obj.todos){
+                    count++
+                }
+            }
+            return count
+        },
+        countTodoOfTask(task){
+            let count = 0
+            for(let obj of task.todos){
+                count++
+            }
+            return count
+        },
+        addFolder(){
+            const newFolder = prompt("请输入新的分类名称")
+            if(newFolder && newFolder.trim()){
+                this.data.push({
+                    name:newFolder,
+                    active:false,
+                    tasks:[],
+                })
+            }
+        },
+
+        delFolder(target){
+            let index = this.data.findIndex(obj => obj === target )
+            this.data.splice(index,1)
+        },
+        // 寻找已经激活的Task，且该task包含激活的todo
+        findATask(){
+            for(let obj of this.data){
+            for(let task of obj.tasks){
+                if(task.active === true && this.hasTaskATodo(task)){
+                    return task
+                }
+            }
+           }
+        },
+        // 判断task中是否包含激活的todo
+        hasTaskATodo(task){
+            for(let todo of task.todos){
+                if(todo.active === true){
+                    return true
+                }
+            }
+            return false
+        },
+        // 寻找激活的todo
+        findATodo(){
+            for(let obj of this.data){
+                for(let task of obj.tasks){
+                    for(let todo of task.todos){
+                        if(todo.active === true){
+                            return todo
+                        }
+                    }
+                }
+            }
+        },
+
+        addTodo(){
+          let task= this.findATask()
+          console.log(task)
+          let newTodo = prompt("请输入新的todo")
+          if(newTodo && newTodo.trim()){
+            task.todos.push({
+                name:newTodo,
+                content:"任务内容",
+                active:false,
+                content:"Content",
+            })
+          }
+          
+        },
+
+        editTodo(){
+            let todo = this.findATodo()
+            console.log(todo)
+            let newTodo = prompt("请输入修改后的标题")
+            if(newTodo && newTodo.trim()){
+                todo.name = newTodo
+            }
+        },
+
+        editTime(){
+            let task = this.findATask()
+            console.log(task)
+            let newTime = prompt("请输入新的时间")
+            if(newTime && newTime.trim()){
+                task.date = newTime
+            }
+        },
+
+        editContent(){
+            let todo = this.findATodo()
+            console.log(todo)
+            let newContent = prompt("请输入新的内容")
+            if(newContent && newContent.trim()){
+                todo.content = newContent
+            }
+        }
+
     },
     computed:{
         findFolders(){
@@ -121,7 +228,19 @@ export default{
                     }
                 }
             }
-        }
+        },
+        countAllTodos(){
+            let arr = []
+            for(let obj of this.data){
+                for(let ob of obj.tasks){
+                    for(let o of ob.todos){
+                        arr.push(o)
+                    }
+                }
+            }
+            return arr
+        },
+       
     }
 }
     
@@ -132,14 +251,14 @@ export default{
           <el-header class="header">GTD</el-header>
           <el-container>
             <el-aside class="aside folder-lists">
-                <el-row class="title">所有任务</el-row>
+                <el-row class="title">所有任务({{countAllTodos.length}})</el-row>
                <div v-for="(obj,index) in findFolders" :key="index">
                 <el-row >
-                    <span><el-icon :size="20"><Folder /></el-icon><span class="folder">&nbsp;{{obj.name}}</span></span>
-                    <el-icon :size="20"><Delete /></el-icon>
+                    <span><el-icon :size="20"><Folder /></el-icon><span class="folder">&nbsp;{{obj.name}} ({{ countTodoOfFolder(obj) }})</span></span>
+                    <el-icon :size="20" @click="delFolder(obj)"><Delete /></el-icon>
                 </el-row>
                     <el-row class="file" v-for="(task, ind) in obj.tasks" :key="ind">
-                        <span><el-icon :size="20"><Document /></el-icon><span class="file"> {{task.name}}</span></span>
+                        <span><el-icon :size="20"><Document /></el-icon><span class="file"> {{task.name}} ({{ countTodoOfTask(task) }})</span></span>
                     </el-row>
                </div>
             </el-aside>
@@ -149,22 +268,22 @@ export default{
                     <el-button type="success" plain>已完成</el-button>
                     <el-button type="danger" plain>未完成</el-button>
                 </el-row>
-                <el-row v-for="(ob,ind) in findActivedTask.todos">{{ob.name}}</el-row>
+                <el-row v-for="(ob,ind) in findActivedTask.todos" :key="ind">{{ob.name}}</el-row>
             </el-aside>
             <el-main>
                 <el-row class="title">
                     <span class="title">{{findActivedTodo.name}}</span>
                     <span class="change">
-                        <el-icon :size="30" ><Edit /></el-icon>
+                        <el-icon :size="30" @click="editTodo"><Edit /></el-icon>
                         <span></span>
                         <el-icon :size="30"><SuccessFilled /></el-icon>
                     </span>
                 </el-row>
-                <el-row class="time">{{findActivedTask.date}}</el-row>
-                <el-row class="content">{{findActivedTodo.content}}</el-row>
+                <el-row class="time" @dblclick="editTime">{{findActivedTask.date}}</el-row>
+                <el-row class="content" @dblclick="editContent">{{findActivedTodo.content}}</el-row>
             </el-main>
-            <el-row class="add-folder"><el-icon><Plus /></el-icon>&nbsp;新增分类</el-row>
-            <el-row class="add-task"> <el-icon><Plus /></el-icon>&nbsp;新增任务</el-row>
+            <el-row class="add-folder" @click="addFolder"><el-icon><Plus /></el-icon>&nbsp;新增分类</el-row>
+            <el-row class="add-task" @click="addTodo"> <el-icon><Plus /></el-icon>&nbsp;新增任务</el-row>
           </el-container>
         </el-container>
       </div>
