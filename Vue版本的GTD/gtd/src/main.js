@@ -12,10 +12,9 @@ import { fas } from "@fortawesome/free-solid-svg-icons"
 /* add icons to the library */
 library.add(fas)
 
-
-
 const app = createApp(App)
-    // 引入element-plus图标
+
+// 引入element-plus图标
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
