@@ -40,7 +40,7 @@ export default{
             date:"2019/1/10",
             todos:[{
                 name:"to do 5",
-                done:false,
+                done:true,
                 active:true,
                 content:"Content",
             },{
@@ -268,15 +268,15 @@ export default{
                     <el-button type="success" plain>已完成</el-button>
                     <el-button type="danger" plain>未完成</el-button>
                 </el-row>
-                <el-row v-for="(ob,ind) in findActivedTask.todos" :key="ind">{{ob.name}}</el-row>
+                <el-row v-for="(ob,ind) in findActivedTask.todos" :key="ind" :class="{done:ob.done}">{{ob.name}}</el-row>
             </el-aside>
             <el-main>
                 <el-row class="title">
-                    <span class="title">{{findActivedTodo.name}}</span>
+                    <span :class="{done:findATodo().done}" >{{findActivedTodo.name}}</span>
                     <span class="change">
                         <el-icon :size="30" @click="editTodo"><Edit /></el-icon>
                         <span></span>
-                        <el-icon :size="30"><SuccessFilled /></el-icon>
+                        <el-icon :size="30" :class="{actived:findATodo().done}"><SuccessFilled /></el-icon>
                     </span>
                 </el-row>
                 <el-row class="time" @dblclick="editTime">{{findActivedTask.date}}</el-row>
@@ -292,8 +292,13 @@ export default{
 <style lang="less">
 
 .done{
-    color:green;
+    text-decoration: line-through;
 }
+
+.actived{
+    color:#A7ECEE;
+}
+
 .common-layout{
     background-color: #EEF1FF;
     height: 600px;
