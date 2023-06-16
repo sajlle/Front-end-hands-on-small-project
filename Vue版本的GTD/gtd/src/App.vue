@@ -91,7 +91,10 @@ export default{
     active:false,
     date:"2019/1/17",
     tasks:[],
-            }]
+            }],
+            showAll:false,
+            showDone:false,
+            showUndone:false,
         }
     },
     methods:{
@@ -158,6 +161,49 @@ export default{
             }
         },
 
+        findAll(){
+            let arr = []
+            for(let obj of this.data){
+                for(let task of obj.tasks){
+                    for(let todo of task.todos){
+                        arr.push(todo)
+                    }
+                }
+            }
+            return arr
+        },
+
+        findDone(){
+            let arr=[]
+            for(let obj of this.data){
+                for(let task of obj.tasks ){
+                    for(let todo of task.todos){
+                        if(todo.done === true){
+                            arr.push(todo)
+                        }
+                        
+                    }
+                }
+            }
+            return arr
+        },
+
+        findUndone(){
+            let arr = []
+            for(let obj of this.data){
+                for(let task of obj.tasks){
+                    for(let todo of task.todos){
+                        if(todo.done === false){
+                            arr.push(todo)
+                        }
+                    }
+                }
+            }
+            return arr
+        },
+
+        
+
         addTodo(){
           let task= this.findATask()
           console.log(task)
@@ -198,6 +244,67 @@ export default{
             if(newContent && newContent.trim()){
                 todo.content = newContent
             }
+        },
+
+        showAllTasks(){
+            this.showDone = false
+            this.showUndone = false
+            this.showAll = false
+            this.showAll = true
+            console.log(this.showAll,this.showDone,this.showUndone)
+        },
+
+        showDoneTasks(){
+            this.showDone = false
+            this.showUndone = false
+            this.showAll = false
+            this.showDone = true
+            console.log(this.showAll,this.showDone,this.showUndone)
+        },
+
+        showUndoneTasks(){
+            this.showDone = false
+            this.showUndone = false
+            this.showAll = false
+            this.showUndone= true
+            console.log(this.showAll,this.showDone,this.showUndone)
+        },
+
+        UnActiveTasks(obj){
+                for(let task of obj.tasks){
+                    if(task.active === true){
+                        task.active = false
+                }
+            }
+        },
+
+        clickTask(ind,obj){
+            this.showDone = false
+            this.showUndone = false
+            this.showAll = false
+            // this.UnActiveTasks()
+            this.UnActiveTasks(obj)
+            obj.tasks[ind].active =true
+            obj.tasks[ind].todos[0].active=true
+            console.log(obj,obj.tasks[ind])
+        },
+
+        UnactiveTdodo(){
+            for(let obj of this.data){
+                for(let task of obj.tasks){
+                    for(let todo of task.todos){
+                        if(todo.active===true){
+                            todo.active=false
+                        }
+                    }
+                }
+            }
+        },
+
+        clickTodo(todo){
+            this.UnactiveTdodo()
+            todo.active=true
+            console.log(todo)
         }
 
     },
@@ -240,6 +347,28 @@ export default{
             }
             return arr
         },
+        showTaskBoolean(){
+            return [this.showAll,this.showDone,this.showUndone]
+        },
+        showTask(){
+            let arr = this.showTaskBoolean
+            console.log(arr)
+            if(arr[0]===true && arr[1]===false&&arr[2]===false){
+                console.log(this.findAll())
+                return this.findAll()
+                
+            }else if (arr[0]===false && arr[1]===true&&arr[2]===false){
+                console.log(this.findDone())
+                return this.findDone()
+            }else if (arr[0]===false && arr[1]===false&&arr[2]===true){
+                return this.findUndone()
+            }else{
+                return this.findATask().todos  
+            }
+
+                   
+            
+        }
        
     }
 }
@@ -257,18 +386,18 @@ export default{
                     <span><el-icon :size="20"><Folder /></el-icon><span class="folder">&nbsp;{{obj.name}} ({{ countTodoOfFolder(obj) }})</span></span>
                     <el-icon :size="20" @click="delFolder(obj)"><Delete /></el-icon>
                 </el-row>
-                    <el-row class="file" v-for="(task, ind) in obj.tasks" :key="ind">
+                    <el-row class="file" v-for="(task, ind) in obj.tasks" :key="ind" @click="clickTask(ind,obj)">
                         <span><el-icon :size="20"><Document /></el-icon><span class="file"> {{task.name}} ({{ countTodoOfTask(task) }})</span></span>
                     </el-row>
                </div>
             </el-aside>
             <el-aside class="aside task-lists">
                 <el-row class="btn ">
-                    <el-button type="primary" plain>全部任务</el-button>
-                    <el-button type="success" plain>已完成</el-button>
-                    <el-button type="danger" plain>未完成</el-button>
+                    <el-button type="primary" plain @click="showAllTasks">全部任务</el-button>
+                    <el-button type="success" plain @click="showDoneTasks">已完成</el-button>
+                    <el-button type="danger" plain @click="showUndoneTasks">未完成</el-button>
                 </el-row>
-                <el-row v-for="(ob,ind) in findActivedTask.todos" :key="ind" :class="{done:ob.done}">{{ob.name}}</el-row>
+                <el-row v-for="(ob,ind) in showTask" :key="ind" :class="{done:ob.done}" @click="clickTodo(ob)">{{ob.name}}</el-row>
             </el-aside>
             <el-main>
                 <el-row class="title">
