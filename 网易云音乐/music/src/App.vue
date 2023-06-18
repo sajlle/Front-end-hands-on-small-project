@@ -39,7 +39,340 @@
             <font-awesome-icon :icon="['fas', 'bars']" />
           </span>
         </el-header>
-        <el-main>Main</el-main>
+        <el-main>
+          <div class="recommend">
+            <div class="header">推荐</div>
+            <div class="body">
+              <swiper
+                :slides-per-view="2"
+                :space-between="25"
+                @swiper="onSwiper"
+                @slideChange="onSlideChange"
+              >
+                <swiper-slide><img src="http://p1.music.126.net/GqrJj1msryLIkPJnu6jlaQ==/109951168681429313.jpg" alt=""></swiper-slide>
+                <swiper-slide><img src="http://p1.music.126.net/kSNA8Qd3FSMW8vMe6ad1TA==/109951168683126134.jpg" alt=""></swiper-slide>
+                
+              </swiper>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="header">你的专属歌单 <font-awesome-icon :icon="['fas', 'angle-right']" ></font-awesome-icon></div>
+            <div class="body">
+              <div class="item">
+                <div class="info">
+                  <font-awesome-icon :icon="['fas', 'headphones']" />
+                  3.2 千万
+                </div>
+                <div class="mask">
+                  <font-awesome-icon :icon="['fas', 'play']" /></div>
+                <el-card :body-style="{ padding: '0px', 'border-radius':'15px '}" shadow="never">
+                 
+                  <img
+                    src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+                    class="image"
+                  />
+                 
+                  <div style="padding: 14px" class="text">
+                    <span>Yummy hamburger Yummy hamburger Yummy hamburger</span>
+                  </div>
+                </el-card>
+                
+              </div>
+              <div class="item">
+                <div class="info">
+                  <font-awesome-icon :icon="['fas', 'headphones']" />
+                  3.2 千万
+                </div>
+                <div class="mask">
+                  <font-awesome-icon :icon="['fas', 'play']" /></div>
+                <el-card :body-style="{ padding: '0px', 'border-radius':'15px '}" shadow="never">
+                 
+                  <img
+                    src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+                    class="image"
+                  />
+                 
+                  <div style="padding: 14px" class="text">
+                    <span>Yummy hamburger Yummy hamburger Yummy hamburger</span>
+                  </div>
+                </el-card>
+                
+              </div>
+              <div class="item">
+                <div class="info">
+                  <font-awesome-icon :icon="['fas', 'headphones']" />
+                  3.2 千万
+                </div>
+                <div class="mask">
+                  <font-awesome-icon :icon="['fas', 'play']" /></div>
+                <el-card :body-style="{ padding: '0px', 'border-radius':'15px '}" shadow="never">
+                 
+                  <img
+                    src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+                    class="image"
+                  />
+                 
+                  <div style="padding: 14px" class="text">
+                    <span>Yummy hamburger Yummy hamburger Yummy hamburger</span>
+                  </div>
+                </el-card>
+                
+              </div>
+              <div class="item">
+                <div class="info">
+                  <font-awesome-icon :icon="['fas', 'headphones']" />
+                  3.2 千万
+                </div>
+                <div class="mask">
+                  <font-awesome-icon :icon="['fas', 'play']" /></div>
+                <el-card :body-style="{ padding: '0px', 'border-radius':'15px '}" shadow="never">
+                 
+                  <img
+                    src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+                    class="image"
+                  />
+                 
+                  <div style="padding: 14px" class="text">
+                    <span>Yummy hamburger Yummy hamburger Yummy hamburger</span>
+                  </div>
+                </el-card>
+                
+              </div>
+              <div class="item">
+                <div class="info">
+                  <font-awesome-icon :icon="['fas', 'headphones']" />
+                  3.2 千万
+                </div>
+                <div class="mask">
+                  <font-awesome-icon :icon="['fas', 'play']" /></div>
+                <el-card :body-style="{ padding: '0px', 'border-radius':'15px '}" shadow="never">
+                 
+                  <img
+                    src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+                    class="image"
+                  />
+                 
+                  <div style="padding: 14px" class="text">
+                    <span>Yummy hamburger Yummy hamburger Yummy hamburger</span>
+                  </div>
+                </el-card>
+                
+              </div>
+              <div class="item">
+                <div class="info">
+                  <font-awesome-icon :icon="['fas', 'headphones']" />
+                  3.2 千万
+                </div>
+                <div class="mask">
+                  <font-awesome-icon :icon="['fas', 'play']" /></div>
+                <el-card :body-style="{ padding: '0px', 'border-radius':'15px '}" shadow="never">
+                 
+                  <img
+                    src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+                    class="image"
+                  />
+                 
+                  <div style="padding: 14px" class="text">
+                    <span>Yummy hamburger Yummy hamburger Yummy hamburger</span>
+                  </div>
+                </el-card>
+                
+              </div>
+              <div class="item">
+                <div class="info">
+                  <font-awesome-icon :icon="['fas', 'headphones']" />
+                  3.2 千万
+                </div>
+                <div class="mask">
+                  <font-awesome-icon :icon="['fas', 'play']" /></div>
+                <el-card :body-style="{ padding: '0px', 'border-radius':'15px '}" shadow="never">
+                 
+                  <img
+                    src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+                    class="image"
+                  />
+                 
+                  <div style="padding: 14px" class="text">
+                    <span>Yummy hamburger Yummy hamburger Yummy hamburger</span>
+                  </div>
+                </el-card>
+                
+              </div>
+              <div class="item">
+                <div class="info">
+                  <font-awesome-icon :icon="['fas', 'headphones']" />
+                  3.2 千万
+                </div>
+                <div class="mask">
+                  <font-awesome-icon :icon="['fas', 'play']" /></div>
+                <el-card :body-style="{ padding: '0px', 'border-radius':'15px '}" shadow="never">
+                 
+                  <img
+                    src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+                    class="image"
+                  />
+                 
+                  <div style="padding: 14px" class="text">
+                    <span>Yummy hamburger Yummy hamburger Yummy hamburger</span>
+                  </div>
+                </el-card>
+                
+              </div>
+              <div class="item">
+                <div class="info">
+                  <font-awesome-icon :icon="['fas', 'headphones']" />
+                  3.2 千万
+                </div>
+                <div class="mask">
+                  <font-awesome-icon :icon="['fas', 'play']" /></div>
+                <el-card :body-style="{ padding: '0px', 'border-radius':'15px '}" shadow="never">
+                 
+                  <img
+                    src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+                    class="image"
+                  />
+                 
+                  <div style="padding: 14px" class="text">
+                    <span>Yummy hamburger Yummy hamburger Yummy hamburger</span>
+                  </div>
+                </el-card>
+                
+              </div>
+              <div class="item">
+                <div class="info">
+                  <font-awesome-icon :icon="['fas', 'headphones']" />
+                  3.2 千万
+                </div>
+                <div class="mask">
+                  <font-awesome-icon :icon="['fas', 'play']" /></div>
+                <el-card :body-style="{ padding: '0px', 'border-radius':'15px '}" shadow="never">
+                 
+                  <img
+                    src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+                    class="image"
+                  />
+                 
+                  <div style="padding: 14px" class="text">
+                    <span>Yummy hamburger Yummy hamburger Yummy hamburger</span>
+                  </div>
+                </el-card>
+                
+              </div>
+              
+            </div>
+          
+          </div>
+          <div class="music">
+            <div class="header">推荐新音乐 <font-awesome-icon :icon="['fas', 'angle-right']" ></font-awesome-icon></div>
+            <div class="body">
+              <div class="item">
+                <div class="cover"></div>
+                <div class="text">
+                  <div class="song">California</div>
+                  <div class="singer">Mylene Farmer</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="cover"></div>
+                <div class="text">
+                  <div class="song">California</div>
+                  <div class="singer">Mylene Farmer</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="cover"></div>
+                <div class="text">
+                  <div class="song">California</div>
+                  <div class="singer">Mylene Farmer</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="cover"></div>
+                <div class="text">
+                  <div class="song">California</div>
+                  <div class="singer">Mylene Farmer</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="cover"></div>
+                <div class="text">
+                  <div class="song">California</div>
+                  <div class="singer">Mylene Farmer</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="cover"></div>
+                <div class="text">
+                  <div class="song">California</div>
+                  <div class="singer">Mylene Farmer</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="cover"></div>
+                <div class="text">
+                  <div class="song">California</div>
+                  <div class="singer">Mylene Farmer</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="cover"></div>
+                <div class="text">
+                  <div class="song">California</div>
+                  <div class="singer">Mylene Farmer</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="cover"></div>
+                <div class="text">
+                  <div class="song">California</div>
+                  <div class="singer">Mylene Farmer</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="cover"></div>
+                <div class="text">
+                  <div class="song">California</div>
+                  <div class="singer">Mylene Farmer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mv">
+            <div class="header">MV <font-awesome-icon :icon="['fas', 'angle-right']" ></font-awesome-icon></div>
+            <div class="body">
+              <div class="item">
+                <div class="info">
+                  <font-awesome-icon :icon="['fas', 'circle-play']" />
+                  196.6 万
+                </div>
+                <div class="mask">
+                  <font-awesome-icon :icon="['fas', 'play']" />
+                </div>
+                <div class="pic"></div>
+                
+                <div class="txt">
+                  <div class="song">California</div>
+                  <div class="singer">Mylene Farmer</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="info">
+                  <font-awesome-icon :icon="['fas', 'circle-play']" />
+                  196.6 万
+                </div>
+                <div class="mask">
+                  <font-awesome-icon :icon="['fas', 'play']" />
+                </div>
+                <div class="pic"></div>
+                
+                <div class="txt">
+                  <div class="song">California</div>
+                  <div class="singer">Mylene Farmer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </el-main>
         <el-footer>
           <span class="left">
             <div class="lf"></div>
@@ -77,7 +410,12 @@
 </template>
 <style lang="less">
 
+
+
 .el-aside{
+  position: fixed;
+  left: 0;
+  top: 0;
   background-color: #f1f4f9;
   padding: 89px 5px;
   .panel{
@@ -111,6 +449,9 @@
 .el-header{
   display: flex;
   position: fixed;
+  left:224px;
+  top:0;
+  z-index: 999;
   background: #fff;
   justify-content: space-between;
   height: 80px;
@@ -212,7 +553,231 @@
 
 .el-main{
   padding-top: 80px;
-  background-color: purple;
+  padding-bottom: 100px;
+  padding-left: 250px;
+  
+  div.header{
+    font-size: 28px;
+    margin-top: 28px;
+    margin-bottom: 15px;
+
+    svg{
+      cursor: pointer;
+    }
+  }
+
+  div.recommend{
+    div.header{
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    div.body{
+      .swiper-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+        transition-property: transform;
+        box-sizing: content-box;
+      }
+
+    .swiper .swiper-slide{
+        width: 50%;
+        height: auto;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        
+        img{
+          height: 221px;
+          border-radius: 15px;
+          cursor: pointer;
+          object-fit: cover;
+        
+        }
+
+        &:hover{
+          opacity: .8;
+        }
+    }
+  }
+  }
+
+  div.playlist{
+    div.body{
+      display: flex;
+      flex-wrap: wrap;
+      flex-shrink: 1;
+
+      div.item{
+        position: relative;
+        width: 220px;
+        margin-right: 10px;
+        margin-bottom: 21px;
+
+        &:hover .mask{
+          display: block;
+        }
+        &:hover .info{
+          display: none;
+        }
+        .el-card{
+          border: none;
+
+          div.text{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+        .el-card img{
+          width: 220px;
+          height: 220px;
+          border-radius: 15px;
+        }
+        div.mask{
+          position: absolute;
+          width: 220px;
+          height: 220px;
+          border-radius: 15px;
+          left: 0;
+          top:0;
+          background-color: rgba(0, 0, 0, 0.5);
+          display: none;
+          text-align: center;
+          line-height: 245px;
+          svg{
+            color:white;
+            font-size: 60px;
+            &:hover{
+              color:#34d399;
+            }
+          }
+        }
+
+        div.info{
+          position: absolute;
+          right: 8px;
+          bottom: 64px;
+          background-color: black;
+          color: white;
+          padding: 5px 10px;
+          border-radius: 15px;
+          opacity: .9;
+        }
+      }
+    }
+  }
+
+  div.music{
+    div.body{
+      display: grid;
+      grid-template-columns: repeat(2, 586px);
+      grid-template-rows: repeat(5, 100px);
+      div.item{
+        border-radius: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+        &:hover{
+          background-color: #d8d0d0;
+        }
+       
+        div.cover{
+          width: 90px;
+          height: 90px;
+          background-color: skyblue;
+          border-radius: 10px;
+          margin-right: 10px;
+
+        }
+        div.text{
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+
+          div.song{
+            margin-bottom: 15px;
+          }
+
+          div.singer{
+            color:rgb(148 163 184)
+          }
+
+        }
+      }
+    }
+ 
+  }
+
+  div.mv{
+    div.body{
+      padding-bottom:10px;
+      display: flex;
+      justify-content: flex-start;
+
+      div.item{
+        position: relative;
+        &:hover .mask{
+          display: block;
+        }
+        &:hover .info{
+          display: none;
+        }
+       
+        div.pic{
+          width: 260px;
+          height: 160px;
+          background-color: pink;
+          border-radius: 10px;
+          margin-right: 10px;
+
+         
+        }
+        div.txt{
+          div{
+            margin-top: 10px;
+          }
+
+          div.singer{
+            color: rgb(143, 161, 189) 
+          }
+        }
+        div.mask{
+          position: absolute;
+          width: 260px;
+          height: 160px;
+          border-radius: 10px;
+          left: 0;
+          top:0;
+          display: none;
+          background-color: rgba(0, 0, 0,.5);
+          text-align: center;
+          line-height: 192px;
+          svg{
+            color:white;
+            font-size: 60px;
+            &:hover{
+              color:#34d399;
+            }
+          }
+        }
+       div.info{
+        background-color: #000;
+        color:#fff;
+        position: absolute;
+        right: 18px;
+        bottom: 70px;
+        padding: 1px 8px;
+        border-radius: 15px;
+       }
+      }
+    }
+  }
 }
 
 .el-footer{
@@ -220,7 +785,10 @@
   height:100px;
   background-color: #fff;
   border-top: 3px solid #ccc;
-
+  position: fixed;
+  bottom: 0;
+  left: 224px;
+  z-index:999;
   display: flex;
   justify-content: space-around;
   
@@ -248,14 +816,13 @@
       }
 
       div.comment{
-      
-
+        position: relative;
         span.count{
           position: absolute;
           height: 15px;
           width: 20px;
-          left: 424px;
-          bottom: 36px;
+          left: 111px;
+          bottom: 10px;
           background-color: #e6e5e5;
           border-radius: 5px;
           font-size: 10px;
@@ -297,9 +864,9 @@
   }
 
   span.right{
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
+
+    margin-top: 38px;
+    margin-left: 163px;
     font-size:18px;
     color:#666;
 
@@ -313,11 +880,34 @@
 </style>
 
 <script>
+ // Import Swiper Vue.js components
+ import { Swiper, SwiperSlide } from 'swiper/vue';
+
+// Import Swiper styles
+import 'swiper/css';
+
 export default{
   data(){
     return {
       input:"",
+
     }
-  }
+  },
+  components: {
+      Swiper,
+      SwiperSlide,
+    },
+    setup() {
+      const onSwiper = (swiper) => {
+        console.log(swiper);
+      };
+      const onSlideChange = () => {
+        console.log('slide change');
+      };
+      return {
+        onSwiper,
+        onSlideChange,
+      };
+    },
 }
 </script>
