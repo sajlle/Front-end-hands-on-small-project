@@ -1,9 +1,9 @@
 <template>
   <el-main>
-   <Recom></Recom>
-   <PlayList></PlayList>
-   <Music></Music>
-   <MV></MV>
+   <Recom />
+   <PlayList />
+   <Music />
+   <MV />
   </el-main>
 </template>
 
